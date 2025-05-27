@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
@@ -18,55 +18,81 @@
             text-align: center;
             margin-bottom: 30px;
         }
-        .container {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .packages-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
         .package {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             border: 1px solid #ddd;
             padding: 15px;
-            margin-bottom: 20px;
             border-radius: 5px;
-            background: #f9f9f9;
+            background: white;
+            align-items: center;
+        }
+        .package-info {
+            padding: 10px;
         }
         .package h2 {
             margin-top: 0;
             color: #3498db;
+            font-size: 1.2em;
         }
         .package p {
             margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        .preview-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
         .preview {
-            width: 100%;
-            height: 200px;
+            width: 150px;
+            height: 100px;
             border: 1px solid #eee;
-            margin-bottom: 10px;
             background: white;
-        }
-        a.download-btn {
-            display: inline-block;
-            padding: 8px 15px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        a.download-btn:hover {
-            background: #2980b9;
         }
         .size-info {
             font-weight: bold;
             color: #e74c3c;
+            display: block;
+            margin: 5px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #2980b9;
         }
         .footer {
             text-align: center;
             margin-top: 30px;
             color: #7f8c8d;
             font-size: 0.9em;
+            padding: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .package {
+                grid-template-columns: 1fr;
+            }
+            .preview {
+                width: 100%;
+                height: 150px;
+            }
         }
     </style>
 </head>
@@ -74,80 +100,125 @@
     <div class="container">
         <h1>Шаблоны упаковки для печати</h1>
         
-        <div class="package">
-            <h2>Пакет 170×270×60 мм</h2>
-            <p><span class="size-info">Размер в развертке: 474 × 360 мм (целый)</span></p>
-            <div class="preview">
-                <object data="Пакет 170x270x60 мм (474 × 360 мм целый).svg" type="image/svg+xml" width="100%" height="100%"></object>
+        <div class="packages-container">
+            <!-- Упорядочено по размеру (от меньшего к большему) -->
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 130×180×140 мм</h2>
+                    <span class="size-info">Размер в развертке: 284 × 310 мм (половина)</span>
+                    <p>Компактная упаковка для небольших изделий. Подходит для косметики, сувениров, электронных компонентов.</p>
+                    <a href="Пакет 130x180x140 мм (284 × 310 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 130x180x140 мм (284 × 310 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 170x270x60 мм (474 × 360 мм целый).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 220×200×140 мм</h2>
-            <p><span class="size-info">Размер в развертке: 374 × 330 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 220x200x140 мм (374 × 330 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 130×190×60 мм</h2>
+                    <span class="size-info">Размер в развертке: 394 × 280 мм (целый)</span>
+                    <p>Универсальная плоская упаковка. Идеальна для документов, печатной продукции, плоских изделий.</p>
+                    <a href="Пакет 130x190x60 мм (394 × 280 мм целый).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 130x190x60 мм (394 × 280 мм целый).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 220x200x140 мм (374 × 330 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 310×230×120 мм</h2>
-            <p><span class="size-info">Размер в развертке: 444 × 350 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 310x230x120 мм ( 444 × 350 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 170×270×60 мм</h2>
+                    <span class="size-info">Размер в развертке: 474 × 360 мм (целый)</span>
+                    <p>Удлиненная упаковка для книг, каталогов, плакатов или узких изделий. Хорошая устойчивость при транспортировке.</p>
+                    <a href="Пакет 170x270x60 мм (474 × 360 мм целый).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 170x270x60 мм (474 × 360 мм целый).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 310x230x120 мм ( 444 × 350 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 340×170×120 мм</h2>
-            <p><span class="size-info">Размер в развертке: 474 × 290 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 340x170x120 мм (474 × 290 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 220×200×140 мм</h2>
+                    <span class="size-info">Размер в развертке: 374 × 330 мм (половина)</span>
+                    <p>Квадратная упаковка средней вместимости. Подходит для обуви, бытовых товаров, электроники.</p>
+                    <a href="Пакет 220x200x140 мм (374 × 330 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 220x200x140 мм (374 × 330 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 340x170x120 мм (474 × 290 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 340×230×110 мм</h2>
-            <p><span class="size-info">Размер в развертке: 464 × 345 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 340x230x110 мм (464 × 345 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 310×230×120 мм</h2>
+                    <span class="size-info">Размер в развертке: 444 × 350 мм (половина)</span>
+                    <p>Вместительная упаковка для крупных товаров. Оптимальна для техники, посуды, домашнего текстиля.</p>
+                    <a href="Пакет 310x230x120 мм ( 444 × 350 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 310x230x120 мм ( 444 × 350 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 340x230x110 мм (464 × 345 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 400×300×120 мм</h2>
-            <p><span class="size-info">Размер в развертке: 534 × 420 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 400x300x120 мм (534 × 420 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 340×170×120 мм</h2>
+                    <span class="size-info">Размер в развертке: 474 × 290 мм (половина)</span>
+                    <p>Широкая низкая упаковка. Отлично подходит для комплектов товаров, наборов, подарочных коробок.</p>
+                    <a href="Пакет 340x170x120 мм (474 × 290 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 340x170x120 мм (474 × 290 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 400x300x120 мм (534 × 420 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 130×180×140 мм</h2>
-            <p><span class="size-info">Размер в развертке: 284 × 310 мм (половина)</span></p>
-            <div class="preview">
-                <object data="Пакет 130x180x140 мм (284 × 310 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 340×230×110 мм</h2>
+                    <span class="size-info">Размер в развертке: 464 × 345 мм (половина)</span>
+                    <p>Универсальная упаковка большого объема. Идеальна для одежды, обуви, крупных товаров.</p>
+                    <a href="Пакет 340x230x110 мм (464 × 345 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 340x230x110 мм (464 × 345 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 130x180x140 мм (284 × 310 мм половина).svg" class="download-btn" download>Скачать SVG</a>
-        </div>
-        
-        <div class="package">
-            <h2>Пакет 130×190×60 мм</h2>
-            <p><span class="size-info">Размер в развертке: 394 × 280 мм (целый)</span></p>
-            <div class="preview">
-                <object data="Пакет 130x190x60 мм (394 × 280 мм целый).svg" type="image/svg+xml" width="100%" height="100%"></object>
+            
+            <div class="package">
+                <div class="package-info">
+                    <h2>Пакет 400×300×120 мм</h2>
+                    <span class="size-info">Размер в развертке: 534 × 420 мм (половина)</span>
+                    <p>Самая большая упаковка в коллекции. Для габаритных товаров, крупной техники, объемных изделий.</p>
+                    <a href="Пакет 400x300x120 мм (534 × 420 мм половина).svg" class="download-btn" download>Скачать SVG</a>
+                </div>
+                <div class="preview-container">
+                    <div class="preview">
+                        <object data="Пакет 400x300x120 мм (534 × 420 мм половина).svg" type="image/svg+xml" width="100%" height="100%"></object>
+                    </div>
+                </div>
             </div>
-            <a href="Пакет 130x190x60 мм (394 × 280 мм целый).svg" class="download-btn" download>Скачать SVG</a>
         </div>
         
         <div class="footer">
-            <p>Все шаблоны предоставлены в формате SVG. Для просмотра и редактирования используйте векторные редакторы (Adobe Illustrator, Inkscape, CorelDRAW).</p>
+            <p>Все шаблоны предоставлены в векторном формате SVG. Для просмотра и редактирования используйте Adobe Illustrator, Inkscape или CorelDRAW.</p>
+            <p>© 2023 Шаблоны упаковки. Все права защищены.</p>
         </div>
     </div>
 </body>
